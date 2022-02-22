@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:jaesysz_chat_app/widgets/bottom_navigationbar.dart'as bnb;
+
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({ Key? key }) : super(key: key);
+   HomeScreen({ Key? key }) : super(key: key);
+
+  final ValueNotifier<int> pageIndex = ValueNotifier(0);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Center(child: Text('HomeScreen')),
+    return  Scaffold(
+        body:const Center(child: Text('HomeScreen')),
+        bottomNavigationBar:bnb.BottomNavigationBar(onItemSelected: (index){
+          pageIndex.value=index;
+        }) ,
       );
   }
 }

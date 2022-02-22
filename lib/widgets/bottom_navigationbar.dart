@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart' as ios;
 import 'package:jaesysz_chat_app/widgets/navigationbar_item.dart';
 
 class BottomNavigationBar extends StatefulWidget {
@@ -35,28 +35,28 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> {
           NavigationBarItem(
             index: 0,
             label: 'Messages',
-            icon: CupertinoIcons.bubble_left_bubble_right_fill,
+            icon: ios.CupertinoIcons.bubble_left_bubble_right_fill,
             isSelected: (selectedIndex == 0),
             onTap: handleItemsSelected,
           ),
           NavigationBarItem(
             index: 1,
             label: 'Notifications',
-            icon: CupertinoIcons.bell_solid,
+            icon: ios.CupertinoIcons.bell_solid,
             isSelected: (selectedIndex == 1),
             onTap: handleItemsSelected,
           ),
           NavigationBarItem(
             index: 2,
             label: 'Calls',
-            icon: CupertinoIcons.phone_fill,
+            icon: ios.CupertinoIcons.phone_fill,
             isSelected: (selectedIndex == 2),
             onTap: handleItemsSelected,
           ),
           NavigationBarItem(
             index: 3,
             label: 'Contacts',
-            icon: CupertinoIcons.person_2_fill,
+            icon: ios.CupertinoIcons.person_2_fill,
             isSelected: (selectedIndex == 3),
             onTap: handleItemsSelected,
           ),
