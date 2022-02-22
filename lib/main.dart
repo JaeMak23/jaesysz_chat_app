@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jaesysz_chat_app/screens/home_screen.dart';
+import 'package:jaesysz_chat_app/screens/screens.dart';
 
 void main() {
   runApp(const MyApp());
