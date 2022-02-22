@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jaesysz_chat_app/helper.dart';
 import 'package:jaesysz_chat_app/pages/pages.dart';
-import 'package:jaesysz_chat_app/widgets/bottom_navigationbar.dart' as bnb;
+import 'package:jaesysz_chat_app/widgets/widgets.dart';
+import 'package:jaesysz_chat_app/widgets/bottom_navigationbar.dart' as botttomNavBar;
+
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -45,6 +48,12 @@ class HomeScreen extends StatelessWidget {
             );
           },
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: Avatar.small(url:Helpers.randomPictureUrl()),
+          )
+        ],
       ),
       body: ValueListenableBuilder(
         valueListenable: pageIndex,
@@ -52,7 +61,7 @@ class HomeScreen extends StatelessWidget {
           return pages[value];
         },
       ),
-      bottomNavigationBar: bnb.BottomNavigationBar(
+      bottomNavigationBar:botttomNavBar.BottomNavigationBar(
         onItemSelected: _onNavigationItemSelected,
       ),
     );
