@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:jaesysz_chat_app/theme.dart';
 
-class NavigationbarItem extends StatelessWidget {
-  const NavigationbarItem({
+class NavigationBarItem extends StatelessWidget {
+  const NavigationBarItem({
     Key? key,
-    required this.onTap,
     required this.index,
     required this.label,
     required this.icon,
     required this.isSelected,
+    required this.onTap,
   }) : super(key: key);
 
-  final ValueChanged<int> onTap;
   final int index;
   final String label;
   final IconData icon;
   final bool isSelected;
+  final ValueChanged<int> onTap;
 
   @override
   Widget build(BuildContext context) {
