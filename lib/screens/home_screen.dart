@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jaesysz_chat_app/helper.dart';
 import 'package:jaesysz_chat_app/pages/pages.dart';
 import 'package:jaesysz_chat_app/widgets/widgets.dart';
-import 'package:jaesysz_chat_app/widgets/bottom_navigationbar.dart' as botttomNavBar;
+import 'package:jaesysz_chat_app/widgets/bottom_navigationbar.dart' as botttom_nav_bar;
 
 
 class HomeScreen extends StatelessWidget {
@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
           return pages[value];
         },
       ),
-      bottomNavigationBar:botttomNavBar.BottomNavigationBar(
+      bottomNavigationBar:botttom_nav_bar.BottomNavigationBar(
         onItemSelected: _onNavigationItemSelected,
       ),
     );

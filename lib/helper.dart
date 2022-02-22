@@ -4,8 +4,9 @@ abstract class Helpers {
   static final random = Random();
 
   static String randomPictureUrl() {
-    final randomInt = random.nextInt(1000);
-    return 'https://picsum/seed/$randomInt/300/300';
+    // final randomInt = random.nextInt(1000);
+    return 'https://media-exp1.licdn.com/dms/image/C4D03AQG1nbcg4Esk3Q/profile-displayphoto-shrink_200_200/0/1638008534625?e=1651104000&v=beta&t=8xDhErIjdg6yCaukUkS29G8BF-8W9F_cnRvhJIFiwd8';
+    // return 'https://picsum/seed/$randomInt/300/300';
   }
 
   static DateTime randomDate() {
