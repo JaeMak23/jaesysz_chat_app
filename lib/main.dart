@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Jaesysz Chat App',
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       home: HomeScreen() ,
     );
   }

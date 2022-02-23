@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:jaesysz_chat_app/helper.dart';
 import 'package:jaesysz_chat_app/pages/pages.dart';
 import 'package:jaesysz_chat_app/widgets/widgets.dart';
-import 'package:jaesysz_chat_app/widgets/bottom_navigationbar.dart'
-    as botttom_nav_bar;
+import 'package:flutter/cupertino.dart' as ios;
+import 'package:jaesysz_chat_app/widgets/navigationbar_item.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -72,8 +72,81 @@ class HomeScreen extends StatelessWidget {
           return pages[value];
         },
       ),
-      bottomNavigationBar: botttom_nav_bar.BottomNavigationBar(
+      bottomNavigationBar: _BottomNavigationBar(
         onItemSelected: _onNavigationItemSelected,
+      ),
+    );
+  }
+}
+
+class _BottomNavigationBar extends StatefulWidget {
+  const _BottomNavigationBar({
+    Key? key,
+    required this.onItemSelected,
+  }) : super(key: key);
+
+  final ValueChanged<int> onItemSelected;
+
+  @override
+  _BottomNavigationBarState createState() => _BottomNavigationBarState();
+}
+
+class _BottomNavigationBarState extends State<_BottomNavigationBar> {
+  var selectedIndex = 0;
+
+  void handleItemsSelected(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+    widget.onItemSelected(index);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final brightness=Theme.of(context).brightness;
+        return Card(
+          color: (brightness==Brightness.light)? Colors.transparent:null,
+          elevation: 0,
+      margin: const EdgeInsets.all(0),
+      child: SafeArea(
+        top: false,
+        bottom: true,
+        child: Padding(
+          padding: const EdgeInsets.only(top:16,left:8,right:8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              NavigationBarItem(
+                index: 0,
+                label: 'Messages',
+                icon: ios.CupertinoIcons.bubble_left_bubble_right_fill,
+                isSelected: (selectedIndex == 0),
+                onTap: handleItemsSelected,
+              ),
+              NavigationBarItem(
+                index: 1,
+                label: 'Notifications',
+                icon: ios.CupertinoIcons.bell_solid,
+                isSelected: (selectedIndex == 1),
+                onTap: handleItemsSelected,
+              ),
+              NavigationBarItem(
+                index: 2,
+                label: 'Calls',
+                icon: ios.CupertinoIcons.phone_fill,
+                isSelected: (selectedIndex == 2),
+                onTap: handleItemsSelected,
+              ),
+              NavigationBarItem(
+                index: 3,
+                label: 'Contacts',
+                icon: ios.CupertinoIcons.person_2_fill,
+                isSelected: (selectedIndex == 3),
+                onTap: handleItemsSelected,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
