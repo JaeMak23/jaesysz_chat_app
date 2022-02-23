@@ -4,7 +4,6 @@ import 'package:jaesysz_chat_app/pages/pages.dart';
 import 'package:jaesysz_chat_app/widgets/widgets.dart';
 import 'package:jaesysz_chat_app/widgets/bottom_navigationbar.dart' as botttom_nav_bar;
 
-
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
@@ -48,10 +47,18 @@ class HomeScreen extends StatelessWidget {
             );
           },
         ),
+        leading: Align(
+          alignment: Alignment.centerRight,      
+            child: IconBackground(
+          icon: Icons.search,
+          onTap: () {
+            print('TODO search');
+          },
+        )),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24.0),
-            child: Avatar.small(url:Helpers.randomPictureUrl()),
+            child: Avatar.small(url: Helpers.randomPictureUrl()),
           )
         ],
       ),
@@ -61,7 +68,7 @@ class HomeScreen extends StatelessWidget {
           return pages[value];
         },
       ),
-      bottomNavigationBar:botttom_nav_bar.BottomNavigationBar(
+      bottomNavigationBar: botttom_nav_bar.BottomNavigationBar(
         onItemSelected: _onNavigationItemSelected,
       ),
     );
