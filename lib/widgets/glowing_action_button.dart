@@ -23,29 +23,29 @@ class GlowingActionButton extends StatelessWidget {
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: color.withOpacity(0.1),
-            spreadRadius: 1,
+            color: color.withOpacity(0.3),
+            spreadRadius: 10,
             blurRadius: 24,
-            offset: const Offset(-22, 0),
+           // offset: const Offset(-22, 0),
           ),
-          BoxShadow(
-            color: color.withOpacity(0.1),
-            spreadRadius: 1,
-            blurRadius: 24,
-            offset: const Offset(22, 0),
-          ),
-          BoxShadow(
-            color: color.withOpacity(0.1),
-            spreadRadius: 8,
-            blurRadius: 42,
-            offset: const Offset(-22, 0),
-          ),
-          BoxShadow(
-            color: color.withOpacity(0.1),
-            spreadRadius: 8,
-            blurRadius: 42,
-            offset: const Offset(22, 0),
-          ),
+          // BoxShadow(
+          //   color: color.withOpacity(0.1),
+          //   spreadRadius: 1,
+          //   blurRadius: 24,
+          //   offset: const Offset(22, 0),
+          // ),
+          // BoxShadow(
+          //   color: color.withOpacity(0.1),
+          //   spreadRadius: 8,
+          //   blurRadius: 42,
+          //   offset: const Offset(-22, 0),
+          // ),
+          // BoxShadow(
+          //   color: color.withOpacity(0.1),
+          //   spreadRadius: 8,
+          //   blurRadius: 42,
+          //   offset: const Offset(22, 0),
+          // ),
         ],
       ),
       child: ClipOval(
