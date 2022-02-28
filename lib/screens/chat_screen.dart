@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:jaesysz_chat_app/models/models.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +17,13 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title:const Text("ChatScreen title."),
+      ),
+      body:const Center(
+      child: Text('ChatScreen'),
+    ),
+    );
   }
 }

@@ -1,7 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:jaesysz_chat_app/helper.dart';
+import 'package:jaesysz_chat_app/screens/screens.dart';
 import 'package:jaesysz_chat_app/theme.dart';
 import 'package:jaesysz_chat_app/widgets/widgets.dart';
 import 'package:jiffy/jiffy.dart';
@@ -42,7 +41,9 @@ class _MessageTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        Navigator.of(context).push(ChatScreen.route(messageData));
+      },
       child: Container(
         height: 100,
         margin: const EdgeInsets.symmetric(horizontal: 8),
